@@ -12,13 +12,10 @@ buildscript {
         }
     }
     dependencies {
-<<<<<<< HEAD
         classpath "net.serenity-bdd:serenity-gradle-plugin:4.2.30"
         classpath "net.serenity-bdd:serenity-single-page-report:4.2.30"
-=======
         classpath "net.serenity-bdd:serenity-gradle-plugin:4.2.22"
         classpath "net.serenity-bdd:serenity-single-page-report:4.2.22"
->>>>>>> 18e6123f059f747e3b84b1e4921dbce759af8499
     }
 }
 
@@ -44,6 +41,11 @@ ext {
 
 dependencies {
     dependencies {
+        implementation "net.serenity-bdd:serenity-screenplay:${serenity_version}"
+        implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenity_version}"
+        implementation 'org.slf4j:slf4j-simple:2.0.5'
+        implementation 'net.datafaker:datafaker:2.5.2'
+
         testImplementation "net.serenity-bdd:serenity-core:${serenity_version}"
         testImplementation "net.serenity-bdd:serenity-cucumber:${serenity_version}"
         testImplementation "net.serenity-bdd:serenity-screenplay:${serenity_version}"
