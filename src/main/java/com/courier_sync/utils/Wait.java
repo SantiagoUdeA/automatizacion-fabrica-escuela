@@ -1,13 +1,13 @@
-package com.buggy_cars_rating.utils;
+package com.courier_sync.utils;
 
-public class WaitTime {
+public class Wait {
 
     /**
      * Pausa la ejecución del thread actual por la cantidad de segundos especificada
      * Maneja la excepción internamente
      * @param seconds Número de segundos a esperar
      */
-    public static void waitForSeconds(int seconds) {
+    public static void forSeconds(int seconds) {
         try {
             Thread.sleep(seconds * 1000L);
         } catch (InterruptedException e) {
@@ -15,7 +15,11 @@ public class WaitTime {
         }
     }
 
-    public static void waitFiveSeconds() {
-        waitForSeconds(5);
+    public static void fiveSeconds() {
+        forSeconds(5);
+    }
+
+    public static void twoSeconds() {
+        forSeconds(2);
     }
 }

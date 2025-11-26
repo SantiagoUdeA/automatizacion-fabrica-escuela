@@ -1,4 +1,4 @@
-package com.buggy_cars_rating.questions;
+package com.courier_sync.questions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;

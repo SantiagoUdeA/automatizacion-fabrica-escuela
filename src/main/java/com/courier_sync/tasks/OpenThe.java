@@ -1,4 +1,4 @@
-package com.buggy_cars_rating.tasks;
+package com.courier_sync.tasks;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.Actor;

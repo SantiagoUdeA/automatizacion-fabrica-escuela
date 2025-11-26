@@ -1,4 +1,4 @@
-package com.buggy_cars_rating.interactions;
+package com.courier_sync.interactions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
