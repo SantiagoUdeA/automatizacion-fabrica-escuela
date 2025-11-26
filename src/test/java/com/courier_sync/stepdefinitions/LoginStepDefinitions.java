@@ -42,32 +42,32 @@ public class LoginStepDefinitions {
     }
 
 
-    @Given("the user has valid authentication details")
-    public void theUserHasValidAuthenticationDetails() {
+    @Given("I provide valid authentication credentials")
+    public void iProvideValidAuthenticationDetails() {
         model = User.valid();
     }
 
-    @When("they attempt to sign in")
+    @When("I attempt to sign in")
     public void theyAttemptToSignIn() {
         user.attemptsTo(SignIn.with(model));
         Wait.twoSeconds();
     }
 
-    @Then("they should gain access to the Billing and Payments module")
-    public void theyShouldGainAccessToTheBillingAndPaymentsModule() {
+    @Then("I should gain access to the application")
+    public void iShouldGainAccessToTheApplication() {
         user.should(seeThat(Dashboard.isDisplayed()));
         Wait.twoSeconds();
     }
 
-    @Given("the user provides invalid authentication details")
-    public void theUserProvidesInvalidAuthenticationDetails() {
+    @Given("I provide invalid authentication credentials")
+    public void iProvideInvalidAuthentication() {
         model = User.invalid();
     }
 
-    @Then("they should be informed that the authentication details are incorrect")
-    public void theyShouldBeInformedThatTheAuthenticationDetailsAreIncorrect() {
+    @Then("I should see the message {string}")
+    public void theyShouldBeInformedThatTheAuthenticationDetailsAreIncorrect(String message) {
         Wait.forMilliseconds(100);
-        user.should(seeThat(ErrorMessageDisplayed.text(), equalTo("Email o contraseña incorrectos")));
+        user.should(seeThat(ErrorMessageDisplayed.text(), equalTo(message)));
         Wait.twoSeconds();
     }
 }
