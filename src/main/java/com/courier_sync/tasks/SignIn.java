@@ -1,6 +1,7 @@
 package com.courier_sync.tasks;
 
 import com.courier_sync.models.User;
+import com.courier_sync.user_interfaces.DashboardPage;
 import com.courier_sync.user_interfaces.LoginPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -32,7 +33,8 @@ public class SignIn implements Task {
                 NavigateTo.page(new LoginPage()),
                 Enter.theValue(email).into(LoginPage.EMAIL_INPUT),
                 Enter.theValue(password).into(LoginPage.PASSWORD_INPUT),
-                Click.on(LoginPage.SUBMIT_BUTTON)
+                Click.on(LoginPage.SUBMIT_BUTTON),
+                WaitForAny.of(DashboardPage.DASHBOARD_MAIN, LoginPage.ERROR_MESSAGE)
         );
     }
 

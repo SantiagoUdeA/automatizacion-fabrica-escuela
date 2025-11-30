@@ -50,7 +50,6 @@ public class LoginStepDefinitions {
     @When("I attempt to sign in")
     public void theyAttemptToSignIn() {
         user.attemptsTo(SignIn.with(model));
-        Wait.twoSeconds();
     }
 
     @Then("I should gain access to the application")
@@ -66,7 +65,6 @@ public class LoginStepDefinitions {
 
     @Then("I should see the message {string}")
     public void theyShouldBeInformedThatTheAuthenticationDetailsAreIncorrect(String message) {
-        Wait.forMilliseconds(100);
         user.should(seeThat(ErrorMessageDisplayed.text(), equalTo(message)));
         Wait.twoSeconds();
     }
